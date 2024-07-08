@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 
+const baseURL = process.env.REACT_APP_API_URL;
+const urlBook = `${baseURL}/Book`;
 
-export function App() {
+function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<any>('http://localhost:7199/api/Book');
+        console.log('Base URL:', baseURL);
+        console.log(urlBook);
+        const response = await axios.get(urlBook);
         console.log(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -17,9 +21,10 @@ export function App() {
   }, []);
 
   return (
-    <>
+    <div>
       <h1>Welcome to the BookBuddy webapp</h1>
-      <p>Communicating with ASP.NET Core</p>
-    </>
+    </div>
   );
 }
+
+export default App;

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import App from './App.tsx';
+import App from './App.tsx';  // Correct if App.tsx uses default export
 
 import reportWebVitals from './reportWebVitals';
 
