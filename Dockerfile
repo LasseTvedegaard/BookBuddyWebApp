@@ -4,10 +4,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-
-# Skift bruger til root for at undgå tilladelsesproblemer
-USER root
-
 RUN npm run build
 
 # Nginx stage to serve the build

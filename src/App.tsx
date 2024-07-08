@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useEffect } from 'react';
 import HttpClient from './services/HttpClient';
 import BookList from './components/BookList';
@@ -11,9 +10,9 @@ function App() {
     const fetchData = async () => {
       try {
         console.log('Base URL:', baseURL);
-        console.log(urlBook);
+        console.log('Full URL for Book:', urlBook);
         const response = await HttpClient(baseURL).get('/Book');
-        console.log(response);
+        console.log('Fetched data:', response);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
